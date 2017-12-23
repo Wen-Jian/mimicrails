@@ -1,4 +1,4 @@
-calss Array
+class Array
 
 	def sum(start = 0)
 		
