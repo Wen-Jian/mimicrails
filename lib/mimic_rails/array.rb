@@ -6,7 +6,7 @@ class Array
 
 	end 
 
-	def multiple(start = 0)
+	def multiple(start = 1)
 
 		inject(start, &:*)
 		
