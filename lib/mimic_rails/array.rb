@@ -6,4 +6,10 @@ class Array
 
 	end 
 
+	def multiple(start = 0)
+
+		inject(start, &:*)
+		
+	end
+
 end
