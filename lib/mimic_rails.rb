@@ -9,7 +9,7 @@ module MimicRails
 
  		`echo debug > debug.txt`;
  		[200, {'Content-Type' => 'text/html'},
- 			["Hello from Ruby on mimic_rails"]]
+ 			["Hello from Ruby on mimic_rails #{[1,2,3].sum}"]]
  		
  	end
 
