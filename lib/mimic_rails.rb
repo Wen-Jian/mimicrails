@@ -1,5 +1,6 @@
 require "mimic_rails/version"
 require "mimic_rails/array"
+require "mimic_rails/routing"
 
 module MimicRails
  
@@ -8,11 +9,29 @@ module MimicRails
  	def call(env)
 
  		`echo debug > debug.txt`;
+ 		klass, act = get_controller_and_action(env)
+ 		controller = klass.new(env)
+ 		text = controller.send(act)
  		[200, {'Content-Type' => 'text/html'},
- 			["Hello from Ruby on mimic_rails #{[1,2,3].sum},#{[1,4,3].multiple}"]]
+ 			[text]]
+ 		
+ 	end
+ 
+ end
+
+ class Controller
+
+ 	def initialize(env)
+
+ 		@env = env
  		
  	end
 
+ 	def env
+
+ 		@env
+ 		
+ 	end
  end
 
 end
