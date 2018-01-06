@@ -8,7 +8,7 @@ module MimicRails
 			env["PATH_INFO"].split('/',4)
 			cont = cont.capitalize # "People"
 			cont += "Controller" # "PeopleController"
-			[object.const_get(cont), action]
+			[Object.const_get(cont), action]
 			
 		end
 	end
